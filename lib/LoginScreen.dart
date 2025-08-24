@@ -39,6 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
               TextFormField(controller: passCtrl, obscureText: true, decoration: InputDecoration(labelText: "Password")),
               SizedBox(height: 20),
               ElevatedButton(onPressed: login, child: Text("Login")),
+              SizedBox(height: 10,),
               TextButton(
                   onPressed: () => Navigator.pushNamed(context, '/signup'),
                   child: Text("New User? Sign Up"))
