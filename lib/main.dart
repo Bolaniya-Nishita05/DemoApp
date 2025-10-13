@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/DashboardScreen.dart';
 import 'package:myapp/LoginScreen.dart';
+import 'package:myapp/NewListDemo.dart';
 import 'package:myapp/SignupScreen.dart';
 import 'package:myapp/SplashScreen.dart';
 
@@ -46,7 +47,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: SplashScreen(),
+      home: NewListDemo(),
+            //SplashScreen(),
       debugShowCheckedModeBanner: false,
       routes: {
         '/login': (_) => LoginScreen(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/NewDemo.dart';
 
 class DashboardScreen extends StatefulWidget {
   @override
@@ -29,10 +30,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
             FadeTransition(opacity: animation, child: child),
         child: Center(
           key: ValueKey<int>(_selectedIndex),
-          child: Text(
+          child: _selectedIndex!=4?Text(
             _titles[_selectedIndex],
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-          ),
+          ):NewDemo()
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -82,6 +83,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ],
             ),
             label: "Profile",
+          ),
+          BottomNavigationBarItem(
+            icon: Column(
+              children: [
+                if (_selectedIndex == 4)
+                  Container(height: 3, width: 40, color: Colors.blue),
+                Icon(Icons.developer_mode),
+              ],
+            ),
+            label: "New Demo",
           ),
         ],
       ),
