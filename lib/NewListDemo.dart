@@ -36,34 +36,36 @@ class ListMethodsDemo extends StatelessWidget {
     var clearList = List.from(numbers);
     clearList.clear();
 
-    return SingleChildScrollView(
-      padding: EdgeInsets.all(16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text("Original List: $numbers"),
-          Text("sublist(2,5): $sub"),
-          Text("shuffled: $shuffled"),
-          Text("reversed: $rev"),
-          Text("asMap(): $mapped"),
-          Text("whereType<int>(): $onlyInts"),
-          Text("getRange(1,4): $range"),
-          Text("replaceRange(1,3,[99,100]): $replaced"),
-          Text("firstWhere(even): $firstEven"),
-          Text("singleWhere(==3): $singleThree"),
-          Text("fold(sum): $sumFold"),
-          Text("reduce(sum): $sumReduce"),
-          Text("followedBy(): $combined"),
-          Text("any(even): $hasEven"),
-          Text("every(>0): $allPositive"),
-          Text("take(3): $firstThree"),
-          Text("skip(2): $skipTwo"),
-          Text("add(7): $added"),
-          Text("length: $len"),
-          Text("isEmpty: $checkEmpty, isNotEmpty: $checkNotEmpty"),
-          Text("first: $first, last: $last"),
-          Text("clear(): $clearList"),
-        ],
+    return Scaffold(
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Original List: $numbers", style: TextStyle(fontWeight: FontWeight.bold),),
+            Text("sublist(2,5): $sub"),
+            Text("shuffled: $shuffled"),
+            Text("reversed: $rev"),
+            Text("asMap(): $mapped"),
+            Text("whereType<int>(): $onlyInts"),
+            Text("getRange(1,4): $range"),
+            Text("replaceRange(1,3,[99,100]): $replaced"),
+            Text("firstWhere(even): $firstEven"),
+            Text("singleWhere(==3): $singleThree"),
+            Text("fold(sum): $sumFold"),
+            Text("reduce(sum): $sumReduce"),
+            Text("followedBy(): $combined"),
+            Text("any(even): $hasEven"),
+            Text("every(>0): $allPositive"),
+            Text("take(3): $firstThree"),
+            Text("skip(2): $skipTwo"),
+            Text("add(7): $added"),
+            Text("length: $len"),
+            Text("isEmpty: $checkEmpty, isNotEmpty: $checkNotEmpty"),
+            Text("first: $first, last: $last"),
+            Text("clear(): $clearList"),
+          ],
+        ),
       ),
     );
   }

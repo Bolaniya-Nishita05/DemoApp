@@ -24,19 +24,23 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: Text("Demo App", style: TextStyle(color: Colors.white,)),
-          backgroundColor: Colors.purple,
-      ),
-      body: ListView.builder(
-        itemCount: items.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(items[index]),
-            onTap: () => _showDialog(items[index]),
-            focusColor: Colors.purple.shade700,
-          );
-        },
+      body: Column(
+        children: [
+          Expanded(child: Text("Home Screen",style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold), textAlign: TextAlign.center,)),
+          Expanded(
+            flex: 5,
+            child: ListView.builder(
+              itemCount: items.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(items[index]),
+                  onTap: () => _showDialog(items[index]),
+                  focusColor: Colors.purple.shade700,
+                );
+              },
+            ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

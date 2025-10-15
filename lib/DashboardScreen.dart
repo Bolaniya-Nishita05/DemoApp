@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/HomeScreen.dart';
 import 'package:myapp/NewDemo.dart';
+import 'package:myapp/NewListDemo.dart';
 
 class DashboardScreen extends StatefulWidget {
   @override
@@ -9,11 +11,13 @@ class DashboardScreen extends StatefulWidget {
 class _DashboardScreenState extends State<DashboardScreen> {
   int _selectedIndex = 0;
 
-  final List<String> _titles = [
-    "Home Screen",
-    "Feeds Screen",
-    "Notifications Screen",
-    "Profile Screen",
+  final List<dynamic> _titles = [
+    HomeScreen(),
+    Text("Feeds Screen",style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+    Text("Notifications Screen",style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+    Text("Profile Screen",style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+    NewDemo(),
+    ListMethodsDemo()
   ];
 
   void _onItemTapped(int index) {
@@ -30,10 +34,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             FadeTransition(opacity: animation, child: child),
         child: Center(
           key: ValueKey<int>(_selectedIndex),
-          child: _selectedIndex!=4?Text(
-            _titles[_selectedIndex],
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-          ):NewDemo()
+          child: _titles[_selectedIndex]
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -93,6 +94,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ],
             ),
             label: "New Demo",
+          ),
+          BottomNavigationBarItem(
+            icon: Column(
+              children: [
+                if (_selectedIndex == 5)
+                  Container(height: 3, width: 40, color: Colors.blue),
+                Icon(Icons.list_alt_rounded),
+              ],
+            ),
+            label: "List Demo",
           ),
         ],
       ),

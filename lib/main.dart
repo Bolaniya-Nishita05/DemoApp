@@ -47,8 +47,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: NewListDemo(),
-            //SplashScreen(),
+      home: //NewListDemo(),
+            SplashScreen(),
       debugShowCheckedModeBanner: false,
       routes: {
         '/login': (_) => LoginScreen(),
